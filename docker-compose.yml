@@ -28,7 +28,7 @@ services:
       timeout: 5s
       start_period: 10s
       retries: 3
-    command: ["proxy"]
+    entrypoint: ["/entrypoint.sh", "proxy"]
 
   gateway:
     build:
@@ -63,7 +63,7 @@ services:
       timeout: 5s
       start_period: 10s
       retries: 3
-    command: ["both"]
+    entrypoint: ["/entrypoint.sh", "both"]
 
 volumes:
   openclaw-data:
